@@ -15,10 +15,10 @@ node_types:
       derived_from: tosca.nodes.Root
       interfaces:
         Standard:
-          create: file:///tmp/scripts/create.sh
-          configure: file:///tmp/scripts/configure.sh
-          start: file:///tmp/scripts/start.sh
-          stop: file:///tmp/scripts/stop.sh
+          create: https://raw.githubusercontent.com/ahgittin/tosca-demo/master/script1/create.sh
+          configure: https://raw.githubusercontent.com/ahgittin/tosca-demo/master/script1/configure.sh
+          start: https://raw.githubusercontent.com/ahgittin/tosca-demo/master/script1/start.sh
+          stop: https://raw.githubusercontent.com/ahgittin/tosca-demo/master/script1/stop.sh
       properties:
         host:
           type: string
