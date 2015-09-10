@@ -7,7 +7,7 @@ imports:
 template_name: ahgittin.sample.script1
 template_version: 1.0.0-SNAPSHOT
 
-description: Sample CSAR file with scripts
+description: Sample TOSCA plan referencing scripts to create a web server
 
 topology_template:
   description: Sample with Script
@@ -27,6 +27,13 @@ topology_template:
     a_server:
       type: tosca.nodes.Compute
       properties:
-        # cheat and use this for brooklyn to know the location
-        os_distribution: localhost
+        mem_size: 4gb
+
+  # if you want to tell brooklyn to assign a location at deploy time, as part of the template, this is the current way.
+  # it can also be done with camp, referencing this topology template.
+  groups:
+    add_brooklyn_location:
+      members: [ a_server ]
+      policies:
+      - brooklyn.location: localhost
 
