@@ -27,7 +27,7 @@ topology_template:
     a_server:
       type: tosca.nodes.Compute
       properties:
-        mem_size: 4gb
+        mem_size: 4 gb
 
   # if you want to tell brooklyn to assign a location at deploy time, as part of the template, this is the current way.
   # it can also be done with camp, referencing this topology template.
